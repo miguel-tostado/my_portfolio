@@ -303,17 +303,14 @@ nav {
 General Section CSS
 */
 
-section h2 {
+.section--title {
+  text-align: center;
   padding: 2em 0 1em;
 }
 
 /*
 Services Section
 */
-
-#services {
-  padding-bottom: 4em;
-}
 
 .services--title {
   /* padding: 1em; */
@@ -354,20 +351,15 @@ Services Section
 
 .service--card {
   align-items: center;
-  border-radius: 50px 50px 50px 50px;
-  -moz-border-radius: 50px 50px 50px 50px;
-  -webkit-border-radius: 50px 50px 50px 50px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
   border: 0px solid #000000;
   display: grid;
-  /* grid-row-gap: 1em; */
   grid-template-rows: 25% 1fr;
   padding: 1em;
   text-align: center;
 }
-
-/* .service--card-title {
-  margin: -500px;
-} */
 
 .service--free-audit {
   text-decoration: none;
@@ -377,20 +369,48 @@ Services Section
 Portfolio Section
 */
 
-#portfolio {
+#portfolio,
+#contact {
   height: 100vh;
-  text-align: center;
 }
 
 .service--title {
   grid-row: 1/2;
-  padding-bottom: 0.5em;
 }
 
 .service--description {
-  /* padding-top: 1em; */
   grid-row: 2/3;
 }
+
+/*
+About Me Section
+*/
+
+.about--content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 30%;
+  grid-template-areas:
+    'text text img'
+    'text text img'
+    'btn btn img';
+}
+
+.about--p {
+  grid-area: text;
+  margin-right: 1em;
+}
+
+.img-me {
+  border-radius: 10px;
+  grid-area: img;
+  object-fit: cover;
+  place-self: center;
+  width: 100%;
+}
+
+/*
+Contact Section
+*/
 
 /*
 General styling
@@ -425,6 +445,10 @@ Media Queries
   footer {
     padding: 0 25%;
   }
+
+  section {
+    padding-bottom: 4em;
+  }
 }
 
 @media (max-width: 2237px) {
@@ -433,6 +457,9 @@ Media Queries
   section,
   footer {
     padding: 0 20%;
+  }
+  section {
+    padding-bottom: 4em;
   }
 }
 
@@ -443,6 +470,9 @@ Media Queries
   footer {
     padding: 0 15%;
   }
+  section {
+    padding-bottom: 4em;
+  }
 }
 
 @media (max-width: 1603px) {
@@ -452,6 +482,9 @@ Media Queries
   footer {
     padding: 0 10%;
   }
+  section {
+    padding-bottom: 4em;
+  }
 }
 
 @media (max-width: 1405px) {
@@ -460,6 +493,9 @@ Media Queries
   section,
   footer {
     padding: 0 8%;
+  }
+  section {
+    padding-bottom: 4em;
   }
   .service--cards {
     grid-gap: 3em;
@@ -472,6 +508,9 @@ Media Queries
   section,
   footer {
     padding: 0 8%;
+  }
+  section {
+    padding-bottom: 4em;
   }
   .service--cards {
     grid-gap: 2em;
@@ -488,6 +527,9 @@ Media Queries
   footer {
     padding: 0 4%;
   }
+  section {
+    padding-bottom: 4em;
+  }
 }
 
 @media (max-width: 882px) {
@@ -496,6 +538,9 @@ Media Queries
   section,
   footer {
     padding: 0 4%;
+  }
+  section {
+    padding-bottom: 4em;
   }
 
   h1,
@@ -543,6 +588,9 @@ Media Queries
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
   }
+  section {
+    padding-bottom: 4em;
+  }
 
   .service--card {
     grid-column: 1;
@@ -578,6 +626,10 @@ Media Queries
 }
 
 @media (max-width: 708px) {
+  section {
+    padding-bottom: 4em;
+  }
+
   h1,
   .hero--title {
     font-size: var(--fs-h3);
@@ -620,6 +672,10 @@ Media Queries
 }
 
 @media (max-width: 570px) {
+  section {
+    padding-bottom: 4em;
+  }
+
   h1,
   .hero--title {
     font-size: var(--fs-h4);
@@ -655,6 +711,10 @@ Media Queries
 }
 
 @media (max-width: 460px) {
+  section {
+    padding-bottom: 4em;
+  }
+
   h1,
   .hero--title {
     font-size: var(--fs-h5);
