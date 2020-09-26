@@ -531,9 +531,9 @@ Media Queries
     font-size: var(--fs-body);
   }
 
-  .service--card {
-    /* padding: 2em; */
-  }
+  /* .service--card {
+    padding: 2em;
+  } */
 }
 
 @media (max-width: 800px) {
