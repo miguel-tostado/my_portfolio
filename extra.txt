@@ -1,0 +1,62 @@
+<div class="service--img service--img-left">
+            <img
+              class="service--icon"
+              src="/public/img/png/design-c.png"
+              alt=""
+            />
+          </div>
+
+          <div class="service--img service-img-right">
+            <img
+              class="service--icon"
+              src="/public/img/png/develop-c.png"
+              alt=""
+            />
+          </div>
+
+
+<!-- <div class="service--card">
+            <div class="service--title-right">
+                <h3>SEO And Analytics</h3>
+            </div>
+            <div class="service--img service--img-left">
+                <img class="service--icon" src="/public/img/png/seo-c.png" alt="">
+            </div>
+            <div class="service-description service-description--right">
+                <p>Inclusion of many proven Search Engine Optimization techniques to help your website rank higher and
+                    faster on searches.</p>
+                <p>I provide regular reports on how your website is doing and suggestions on where improvements can be mad.
+                </p>
+            </div>
+        </div>
+
+        <div class="service--card">
+            <div class="service--title-left">
+                <h3>Digital Marketing</h3>
+            </div>
+            <div class="service--img service-img-right">
+                <img class="service--icon" src="/public/img/png/dm-c.png" alt="">
+            </div>
+            <div class="service-description service-description-l-eft">
+                <p>Integrate Google Marketing Platform tools with your website to monitor your company's growth and manage
+                    your advertising
+                    campaigns.</p>
+                <p>Let me manage your ad campaigns for you and provide regular status reports.</p>
+            </div>
+        </div>
+
+        <div class="service--card">
+            <div class="service--title-right">
+                <h3>Website Hosting</h3>
+            </div>
+            <div class="service--img service--img-left">
+                <img class="service--icon" src="/public/img/png/host-c.png" alt="">
+            </div>
+            <div class="service-description service-description--right">
+                <p>Focus more of your attention on growing your business and let me manage your website's hosting for you!
+                </p>
+                <p>Have peace of mind knowing your website is available to customers and is secure. With frequent back-ups
+                    and high
+                    up-times.</p>
+            </div>
+        </div> -->
