@@ -2,6 +2,10 @@
 //   '.hero--color-block, .hero--hello, .hero--title-span, .hero--color-block, .hero--div, .hero--sub, .hero--pitch, .hero--cta, .hero--see-next',
 // )
 
+const main = document.getElementById('main')
+
+main.style.visibility = 'visible'
+
 ScrollTrigger.matchMedia({
   //  > 1062px to prevent overflow on x axis
   '(min-width: 1063px)': function () {
@@ -10,6 +14,8 @@ ScrollTrigger.matchMedia({
     */
     const heroDisplay = gsap.timeline()
     const defaultSubHeroSection = {opacity: 0, y: '-10vh'}
+
+    console.log(main.style)
 
     gsap.set('.hero--sub', {opacity: 0, y: 50})
     gsap.set('.hero--pitch', defaultSubHeroSection)

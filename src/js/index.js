@@ -27,8 +27,6 @@ Gets current year and displays it in the footer
 const footerCopy = document.getElementsByClassName('footer--year')
 const currentYear = new Date().getFullYear()
 
-console.log(footerCopy)
-
 footerCopy[0].textContent = currentYear
 
 /*
