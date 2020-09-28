@@ -79,6 +79,7 @@ strong {
 }
 
 h1,
+.section--title,
 .hero--title,
 .logo--name {
   font-family: var(--ff-title);
@@ -96,23 +97,28 @@ h2,
 
 h3,
 .logo--home-link,
-.hero--sub {
+.hero--sub,
+.fab {
   font-size: var(--fs-h3);
 }
 
-h4 {
+h4,
+.hero--cta {
   font-size: var(--fs-h4);
 }
 
 h5,
 a,
-.hero--see-next {
+.hero--see-next,
+.form--submit-btn {
   font-size: var(--fs-h5);
 }
 
 body,
 .logo--sub-text,
-.service--free-audit {
+.service--free-audit,
+input,
+textarea {
   font-size: var(--fs-h6);
 }
 
@@ -146,9 +152,12 @@ main,
   );
 }
 
+body,
 header,
+.btn,
 .hero--color-block,
-.hero--cta {
+/* .hero--cta, */
+#contact {
   background: var(--c-brand);
 }
 
@@ -157,12 +166,9 @@ body,
 .hero--see-next a,
 .logo--home-link,
 .nav--link,
-.service--card {
+.service--card,
+.contact--socials a {
   color: var(--c-light);
-}
-
-.service--title-icon {
-  fill: var(--c-light);
 }
 
 .service--free-audit:hover {
@@ -195,6 +201,10 @@ Main Structure
 
 main {
   align-items: center;
+  background-image: url('../img/hero-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -231,7 +241,10 @@ main {
   opacity: 1;
 }
 
-.hero--see-next a {
+.hero--see-next a,
+.logo--home-link,
+.contact--socials a,
+.contact--socials a:visited {
   text-decoration: none;
 }
 
@@ -255,7 +268,6 @@ header {
 
 .logo--home-link {
   align-self: center;
-  text-decoration: none;
 }
 
 nav {
@@ -303,6 +315,10 @@ nav {
 General Section CSS
 */
 
+section {
+  padding-bottom: 4em;
+}
+
 .section--title {
   text-align: center;
   padding: 2em 0 1em;
@@ -313,7 +329,6 @@ Services Section
 */
 
 .services--title {
-  /* padding: 1em; */
   text-align: center;
 }
 
@@ -369,8 +384,7 @@ Services Section
 Portfolio Section
 */
 
-#portfolio,
-#contact {
+#portfolio {
   height: 100vh;
 }
 
@@ -412,14 +426,67 @@ About Me Section
 Contact Section
 */
 
+form {
+  background: var(--c-dark);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 4em;
+  padding: 1em 5%;
+}
+
+input {
+  height: 50px;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+input,
+textarea {
+  border-radius: 10px;
+  margin-bottom: 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  border: solid 5px var(--c-brand);
+  outline: none;
+}
+
+.form--submit-btn {
+  align-self: center;
+  /* width: 25%; */
+}
+
+.contact--socials {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+/*
+Footer Section
+*/
+
+footer {
+  background: var(--c-dark);
+  opacity: 0.75;
+  padding: 0.1em 0;
+  text-align: center;
+}
+
 /*
 General styling
 */
 
 .btn {
-  border-radius: 50px;
+  border-radius: 10px;
   border-style: none;
-  font-size: var(--fs-h4);
+  /* font-size: var(--fs-h4); */
   padding: 0.2em 0.75em;
   text-decoration: none;
   transition: color 0.5s, background 0.5s;
@@ -433,21 +500,16 @@ a,
 .btn:focus {
   outline: none;
 }
-
 /*
 Media Queries
 */
 
-@media (min-width: 1862px) {
-  main,
-  header,
-  section,
-  footer {
-    padding: 0 25%;
+@media (min-width: 1867px) {
+  form {
+    width: 35%;
   }
-
-  section {
-    padding-bottom: 4em;
+  .contact--socials {
+    width: 30%;
   }
 }
 
@@ -461,6 +523,12 @@ Media Queries
   section {
     padding-bottom: 4em;
   }
+  form {
+    width: 50%;
+  }
+  .contact--socials {
+    width: 45%;
+  }
 }
 
 @media (max-width: 1867px) {
@@ -473,6 +541,9 @@ Media Queries
   section {
     padding-bottom: 4em;
   }
+  form {
+    width: 50%;
+  }
 }
 
 @media (max-width: 1603px) {
@@ -484,6 +555,9 @@ Media Queries
   }
   section {
     padding-bottom: 4em;
+  }
+  .contact--socials {
+    width: 45%;
   }
 }
 
@@ -499,6 +573,12 @@ Media Queries
   }
   .service--cards {
     grid-gap: 3em;
+  }
+  form {
+    width: 65%;
+  }
+  .contact--socials {
+    width: 45%;
   }
 }
 
@@ -542,7 +622,9 @@ Media Queries
   section {
     padding-bottom: 4em;
   }
-
+  input {
+    height: 45px;
+  }
   h1,
   .hero--title {
     font-size: var(--fs-h2);
@@ -555,30 +637,34 @@ Media Queries
 
   h3,
   .logo--home-link,
-  .hero--sub {
+  .hero--sub,
+  .fab {
     font-size: var(--fs-h4);
   }
 
   h4,
-  .btn {
+  .btn,
+  .hero--cta {
     font-size: var(--fs-h5);
   }
 
   h5,
   a,
-  .hero--see-next {
+  .hero--see-next,
+  .form--submit-btn {
     font-size: var(--fs-h6);
   }
 
   body,
   .logo--sub-text,
-  .service--free-audit {
+  .service--free-audit,
+  input,
+  textarea {
     font-size: var(--fs-body);
   }
-
-  /* .service--card {
-    padding: 2em;
-  } */
+  .contact--socials {
+    width: 45%;
+  }
 }
 
 @media (max-width: 800px) {
@@ -613,9 +699,9 @@ Media Queries
 
   .service--card {
     align-items: center;
-    border-radius: 50px 50px 50px 50px;
-    -moz-border-radius: 50px 50px 50px 50px;
-    -webkit-border-radius: 50px 50px 50px 50px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
     display: grid;
     /* grid-row-gap: 1em; */
@@ -623,11 +709,21 @@ Media Queries
     padding: 1em;
     text-align: center;
   }
+  form {
+    width: 90%;
+  }
+  .contact--socials {
+    width: 75%;
+  }
 }
 
 @media (max-width: 708px) {
   section {
     padding-bottom: 4em;
+  }
+
+  input {
+    height: 40px;
   }
 
   h1,
@@ -642,24 +738,29 @@ Media Queries
 
   h3,
   .logo--home-link,
-  .hero--sub {
+  .hero--sub,
+  .fab {
     font-size: var(--fs-h5);
   }
 
   h4,
-  .btn {
+  .btn,
+  .hero--cta {
     font-size: var(--fs-h6);
   }
 
   h5,
   a,
-  .hero--see-next {
+  .hero--see-next,
+  .form--submit-btn {
     font-size: var(--fs-body);
   }
 
   body,
   .logo--sub-text,
-  .service--free-audit {
+  .service--free-audit,
+  input,
+  textarea {
     font-size: var(--fs-small);
   }
 
@@ -676,6 +777,10 @@ Media Queries
     padding-bottom: 4em;
   }
 
+  input {
+    height: 35px;
+  }
+
   h1,
   .hero--title {
     font-size: var(--fs-h4);
@@ -688,24 +793,29 @@ Media Queries
 
   h3,
   .logo--home-link,
-  .hero--sub {
+  .hero--sub,
+  .fab {
     font-size: var(--fs-h6);
   }
 
   h4,
-  .btn {
+  .btn,
+  .hero--cta {
     font-size: var(--fs-body);
   }
 
   h5,
   a,
-  .hero--see-next {
+  .hero--see-next,
+  .form--submit-btn {
     font-size: var(--fs-small);
   }
 
   body,
   .logo--sub-text,
-  .service--free-audit {
+  .service--free-audit,
+  input,
+  textarea {
     font-size: var(--fs-smaller);
   }
 }
@@ -713,6 +823,10 @@ Media Queries
 @media (max-width: 460px) {
   section {
     padding-bottom: 4em;
+  }
+
+  input {
+    height: 30px;
   }
 
   h1,
@@ -727,24 +841,29 @@ Media Queries
 
   h3,
   .logo--home-link,
-  .hero--sub {
+  .hero--sub,
+  .fab {
     font-size: var(--fs-body);
   }
 
   h4,
-  .btn {
+  .btn,
+  .hero--cta {
     font-size: var(--fs-small);
   }
 
   h5,
   a,
-  .hero--see-next {
+  .hero--see-next,
+  .form--submit-btn {
     font-size: var(--fs-smaller);
   }
 
   body,
   .logo--sub-text,
-  .service--free-audit {
+  .service--free-audit,
+  input,
+  textarea {
     font-size: var(--fs-smallest);
   }
 }
