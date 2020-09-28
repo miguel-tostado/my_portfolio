@@ -38,14 +38,15 @@
       business grow their internet presence.
     </title>
     <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Kufam:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha384-9Z9AuAj0Xi0z7WFOSgjjow8EnNY9wPNp925TVLlAyWhvZPsf5Ks23Ex0mxIrWJzJ"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -189,19 +190,21 @@
       </div>
     </section>
 
+    <!-- Portfolio Section -->
     <section id="portfolio">
       <h2 class="portfolio--title section--title">Portfolio in Progress</h2>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
       <h2 class="about--title section--title">About Me</h2>
       <div class="about--content">
         <p class="about--p">
           Hi! My name is Miguel Tostado and I'm a freelance web developer
-          located in Maine who specializes in front-end user interface / user
-          experience (UI/UX) design, with front-end development. My goal with
-          each project I design and build is to create a website that appeals to
-          the user base while maintaining a high level of performance.
+          located in Maine who specializes in web design and front-end
+          development. My goal with each project I design and build is to create
+          a website that appeals to the user base while maintaining a high level
+          of performance.
           <br />
           <br />
           As a designer, I aim for a clean, modern style that's very intuitive
@@ -221,7 +224,64 @@
       </div>
     </section>
 
-    <section id="contact"></section>
+    <svg
+      class="contact--down-arrow"
+      id="Layer_1"
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1000 75"
+    >
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #eeebec;
+          }
+        </style>
+      </defs>
+      <polygon class="cls-1" points="0 0 500 75 1000 0 0 0" />
+    </svg>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="contact--title section--title">Contact</h2>
+      <form action="" method="post">
+        <label for="name"
+          >Name:<br /><input type="text" name="name" id="name" />
+        </label>
+        <label for="email"
+          >Email:<br /><input type="email" name="email" id="email" />
+        </label>
+        <p class="form--email-check"></p>
+        <label for="message"
+          >Message:<br /><textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="5"
+          ></textarea>
+        </label>
+        <button id="form--submit" class="btn form--submit-btn" type="submit">
+          <i class="far fa-envelope"></i> Send
+        </button>
+      </form>
+      <div class="contact--socials">
+        <a href="https://www.linkedin.com/in/migueltostado/"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a href="https://twitter.com/207Toast"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://github.com/miguel-tostado"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="#">Resume</a>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; <span class="footer--year"></span> Miguel Tostado</p>
+    </footer>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
@@ -238,7 +298,7 @@
       integrity="sha384-IqFDa6K9SJzsScnaQ67Y8rd0qD38ZdhpMnvvHT8HyIIo4zwrxa/YDL5edt/MmN8W"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/index.js"></script>
     <script src="./js/gsap.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
