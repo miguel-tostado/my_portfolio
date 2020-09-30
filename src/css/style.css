@@ -44,6 +44,7 @@ html {
 
 body {
   font-family: var(--ff-body);
+  visibility: hidden;
 }
 
 main,
@@ -97,13 +98,13 @@ h2,
 
 h3,
 .logo--home-link,
-.hero--sub,
-.fab {
+.hero--sub {
   font-size: var(--fs-h3);
 }
 
 h4,
-.hero--cta {
+.hero--cta,
+.fab {
   font-size: var(--fs-h4);
 }
 
@@ -209,7 +210,6 @@ main {
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-  visibility: hidden;
 }
 
 .hero--div {
@@ -638,14 +638,14 @@ Media Queries
 
   h3,
   .logo--home-link,
-  .hero--sub,
-  .fab {
+  .hero--sub {
     font-size: var(--fs-h4);
   }
 
   h4,
   .btn,
-  .hero--cta {
+  .hero--cta,
+  .fab {
     font-size: var(--fs-h5);
   }
 
@@ -739,14 +739,14 @@ Media Queries
 
   h3,
   .logo--home-link,
-  .hero--sub,
-  .fab {
+  .hero--sub {
     font-size: var(--fs-h5);
   }
 
   h4,
   .btn,
-  .hero--cta {
+  .hero--cta,
+  .fab {
     font-size: var(--fs-h6);
   }
 
@@ -794,14 +794,14 @@ Media Queries
 
   h3,
   .logo--home-link,
-  .hero--sub,
-  .fab {
+  .hero--sub {
     font-size: var(--fs-h6);
   }
 
   h4,
   .btn,
-  .hero--cta {
+  .hero--cta,
+  .fab {
     font-size: var(--fs-body);
   }
 
@@ -842,14 +842,14 @@ Media Queries
 
   h3,
   .logo--home-link,
-  .hero--sub,
-  .fab {
+  .hero--sub {
     font-size: var(--fs-body);
   }
 
   h4,
   .btn,
-  .hero--cta {
+  .hero--cta,
+  .fab {
     font-size: var(--fs-small);
   }
 
