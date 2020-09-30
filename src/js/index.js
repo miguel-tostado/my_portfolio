@@ -24,9 +24,9 @@ window.addEventListener('scroll', (event) => {
 /*
 Prevent form submission as Netlify does this for me
 */
-const formSubmit = document.getElementById('contact--form')
+// const formSubmit = document.getElementById('contact--form')
 
-formSubmit.addEventListener('submit', (e) => e.preventDefault())
+// formSubmit.addEventListener('submit', (e) => e.preventDefault())
 
 /*
 Gets current year and displays it in the footer

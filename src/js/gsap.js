@@ -13,12 +13,10 @@ ScrollTrigger.matchMedia({
     Controls for the hero section sequence
     */
     const heroDisplay = gsap.timeline()
-    const defaultSubHeroSection = {opacity: 0, y: '-10vh'}
+    // const defaultSubHeroSection = {opacity: 0, y: '100px'}
 
-    gsap.set('.hero--sub', {opacity: 0, y: 50})
-    gsap.set('.hero--pitch', defaultSubHeroSection)
-    gsap.set('.hero--cta', defaultSubHeroSection)
-    gsap.set('.hero--see-next', defaultSubHeroSection)
+    gsap.set('.hero--sub', {opacity: 0, y: '100px'})
+    gsap.set('.hero--see-next', {opacity: 0, y: '-100px'})
 
     heroDisplay
       .to('.hero--color-block', {
@@ -33,19 +31,19 @@ ScrollTrigger.matchMedia({
         height: 100,
         ease: 'elastic.out',
       })
-      .to('.hero--div', {duration: 1, y: '-25vh', ease: 'power3.out'}, '-=9')
+      .from('.hero--div', {duration: 1, y: '25vh', ease: 'power3.out'}, '-=9')
       .to('.hero--sub', {duration: 0.65, opacity: '100%', y: 0}, '-=10')
-      .to(
+      .from(
         '.hero--pitch',
-        {duration: 1, opacity: '100%', y: '-40vh', ease: 'power3.out'},
+        {duration: 1.5, opacity: '0', ease: 'power3.out'},
         '-=9',
       )
-      .to(
+      .from(
         '.hero--cta',
-        {duration: 1, opacity: '100%', y: '-39vh', ease: 'power3.out'},
+        {duration: 1.5, opacity: '0', y: '-9vh', ease: 'power3.out'},
         '-=9',
       )
-      .to('.hero--see-next', {duration: 1, opacity: '100%', y: '-13vh'}, '-=9')
+      .to('.hero--see-next', {duration: 0.65, opacity: '100%', y: 0}, '-=9')
 
     /*
       Controls for the services section sequence
@@ -56,7 +54,7 @@ ScrollTrigger.matchMedia({
         trigger: '.service--cards',
         start: '30% 90%',
         end: 'center 50%',
-        scrub: 2.5,
+        scrub: 2,
         // markers: true,
       },
     })
@@ -88,17 +86,15 @@ ScrollTrigger.matchMedia({
   },
 
   //  < 1062px to prevent overflow on x axis
-  '(max-width: 1062px)': function () {
+  '(max-width: 1063px)': function () {
     /*
     Controls for the hero section sequence
     */
     const heroDisplay = gsap.timeline()
-    const defaultSubHeroSection = {opacity: 0, y: '-10vh'}
+    // const defaultSubHeroSection = {opacity: 0, y: '-10vh'}
 
-    gsap.set('.hero--sub', {opacity: 0, y: 50})
-    gsap.set('.hero--pitch', defaultSubHeroSection)
-    gsap.set('.hero--cta', defaultSubHeroSection)
-    gsap.set('.hero--see-next', defaultSubHeroSection)
+    gsap.set('.hero--sub', {opacity: 0, y: '100px'})
+    gsap.set('.hero--see-next', {opacity: 0, y: '-100px'})
 
     heroDisplay
       .to('.hero--color-block', {
@@ -113,19 +109,19 @@ ScrollTrigger.matchMedia({
         height: 100,
         ease: 'elastic.out',
       })
-      .to('.hero--div', {duration: 1, y: '-25vh', ease: 'power3.out'}, '-=9')
+      .from('.hero--div', {duration: 1, y: '25vh', ease: 'power3.out'}, '-=9')
       .to('.hero--sub', {duration: 0.65, opacity: '100%', y: 0}, '-=10')
-      .to(
+      .from(
         '.hero--pitch',
-        {duration: 1, opacity: '100%', y: '-30vh', ease: 'power3.out'},
+        {duration: 1.5, opacity: '0', ease: 'power3.out'},
         '-=9',
       )
-      .to(
+      .from(
         '.hero--cta',
-        {duration: 1, opacity: '100%', y: '-29vh', ease: 'power3.out'},
+        {duration: 1.5, opacity: '0', y: '-9vh', ease: 'power3.out'},
         '-=9',
       )
-      .to('.hero--see-next', {duration: 1, opacity: '100%', y: '-3vh'}, '-=9')
+      .to('.hero--see-next', {duration: 0.65, opacity: '100%', y: 0}, '-=9')
 
     /*
       Controls for the services section sequence
@@ -136,7 +132,7 @@ ScrollTrigger.matchMedia({
         trigger: '.service--cards',
         start: '30% 90%',
         end: 'center 50%',
-        scrub: 2.5,
+        scrub: 2,
         // markers: true,
       },
     })
@@ -167,44 +163,18 @@ ScrollTrigger.matchMedia({
     }
   },
 
-  '(max-width: 882px)': function () {
+  '(max-width: 883px)': function () {
     /*
     Controls for the hero section sequence
     */
     const heroDisplay = gsap.timeline()
-    const defaultSubHeroSection = {opacity: 0, y: '-10vh'}
 
-    gsap.set('.hero--sub', {opacity: 0, y: 50})
-    gsap.set('.hero--pitch', defaultSubHeroSection)
-    gsap.set('.hero--cta', defaultSubHeroSection)
-    gsap.set('.hero--see-next', defaultSubHeroSection)
-
-    heroDisplay
-      .to('.hero--color-block', {
-        duration: 1,
-        width: 153,
-        delay: 0.5,
-        ease: 'power4.inOut',
-      })
-      .from('.hero--title-span', {duration: 1, ease: 'power3.out'})
-      .to('.hero--color-block', {
-        duration: 10,
-        height: 100,
-        ease: 'elastic.out',
-      })
-      .to('.hero--div', {duration: 1, y: '-25vh', ease: 'power3.out'}, '-=9')
-      .to('.hero--sub', {duration: 0.65, opacity: '100%', y: 0}, '-=10')
-      .to(
-        '.hero--pitch',
-        {duration: 1, opacity: '100%', y: '-30vh', ease: 'power3.out'},
-        '-=9',
-      )
-      .to(
-        '.hero--cta',
-        {duration: 1, opacity: '100%', y: '-29vh', ease: 'power3.out'},
-        '-=9',
-      )
-      .to('.hero--see-next', {duration: 1, opacity: '100%', y: '-3vh'}, '-=9')
+    heroDisplay.to('.hero--color-block', {
+      duration: 1,
+      width: 153,
+      delay: 0.5,
+      ease: 'power4.inOut',
+    })
 
     return function () {
       heroDisplay.kill()
@@ -221,13 +191,10 @@ ScrollTrigger.matchMedia({
         trigger: '.service--cards',
         start: '30% 90%',
         end: 'center 50%',
-        scrub: 2.5,
+        scrub: 2,
         // markers: true,
       },
     })
-
-    const defaultService_left = {opacity: 0, x: '-4%', y: '75%'}
-    const defaultService_right = {opacity: 0, x: '4%', y: '75%'}
 
     const defaultServiceMovementIn = {
       opacity: '100%',
@@ -235,10 +202,8 @@ ScrollTrigger.matchMedia({
       y: '0%',
     }
 
-    gsap.set('.service--card-design', defaultService_left)
-    gsap.set('.service--card-development', defaultService_right)
-    gsap.set('.service--card-analytics', defaultService_left)
-    gsap.set('.service--card-audit', defaultService_right)
+    gsap.set('.hero--sub', {opacity: 0, y: '100px'})
+    gsap.set('.hero--see-next', {opacity: 0, y: '-100px'})
 
     serviceDisplayDown
       .to('.service--card-design', defaultServiceMovementIn)
@@ -256,39 +221,13 @@ ScrollTrigger.matchMedia({
     Controls for the hero section sequence
     */
     const heroDisplay = gsap.timeline()
-    const defaultSubHeroSection = {opacity: 0, y: '-10vh'}
 
-    gsap.set('.hero--sub', {opacity: 0, y: 50})
-    gsap.set('.hero--pitch', defaultSubHeroSection)
-    gsap.set('.hero--cta', defaultSubHeroSection)
-    gsap.set('.hero--see-next', defaultSubHeroSection)
-
-    heroDisplay
-      .to('.hero--color-block', {
-        duration: 1,
-        width: 123,
-        delay: 0.5,
-        ease: 'power4.inOut',
-      })
-      .from('.hero--title-span', {duration: 1, ease: 'power3.out'})
-      .to('.hero--color-block', {
-        duration: 10,
-        height: 100,
-        ease: 'elastic.out',
-      })
-      .to('.hero--div', {duration: 1, y: '-25vh', ease: 'power3.out'}, '-=9')
-      .to('.hero--sub', {duration: 0.65, opacity: '100%', y: 0}, '-=10')
-      .to(
-        '.hero--pitch',
-        {duration: 1, opacity: '100%', y: '-30vh', ease: 'power3.out'},
-        '-=9',
-      )
-      .to(
-        '.hero--cta',
-        {duration: 1, opacity: '100%', y: '-29vh', ease: 'power3.out'},
-        '-=9',
-      )
-      .to('.hero--see-next', {duration: 1, opacity: '100%', y: '-3vh'}, '-=9')
+    heroDisplay.to('.hero--color-block', {
+      duration: 1,
+      width: 123,
+      delay: 0.5,
+      ease: 'power4.inOut',
+    })
 
     return function () {
       heroDisplay.kill()
@@ -300,39 +239,13 @@ ScrollTrigger.matchMedia({
     Controls for the hero section sequence
     */
     const heroDisplay = gsap.timeline()
-    const defaultSubHeroSection = {opacity: 0, y: '-10vh'}
 
-    gsap.set('.hero--sub', {opacity: 0, y: 50})
-    gsap.set('.hero--pitch', defaultSubHeroSection)
-    gsap.set('.hero--cta', defaultSubHeroSection)
-    gsap.set('.hero--see-next', defaultSubHeroSection)
-
-    heroDisplay
-      .to('.hero--color-block', {
-        duration: 1,
-        width: 98,
-        delay: 0.5,
-        ease: 'power4.inOut',
-      })
-      .from('.hero--title-span', {duration: 1, ease: 'power3.out'})
-      .to('.hero--color-block', {
-        duration: 10,
-        height: 100,
-        ease: 'elastic.out',
-      })
-      .to('.hero--div', {duration: 1, y: '-25vh', ease: 'power3.out'}, '-=9')
-      .to('.hero--sub', {duration: 0.65, opacity: '100%', y: 0}, '-=10')
-      .to(
-        '.hero--pitch',
-        {duration: 1, opacity: '100%', y: '-30vh', ease: 'power3.out'},
-        '-=9',
-      )
-      .to(
-        '.hero--cta',
-        {duration: 1, opacity: '100%', y: '-29vh', ease: 'power3.out'},
-        '-=9',
-      )
-      .to('.hero--see-next', {duration: 1, opacity: '100%', y: '-3vh'}, '-=9')
+    heroDisplay.to('.hero--color-block', {
+      duration: 1,
+      width: 98,
+      delay: 0.5,
+      ease: 'power4.inOut',
+    })
 
     return function () {
       heroDisplay.kill()
@@ -344,39 +257,13 @@ ScrollTrigger.matchMedia({
     Controls for the hero section sequence
     */
     const heroDisplay = gsap.timeline()
-    const defaultSubHeroSection = {opacity: 0, y: '-10vh'}
 
-    gsap.set('.hero--sub', {opacity: 0, y: 50})
-    gsap.set('.hero--pitch', defaultSubHeroSection)
-    gsap.set('.hero--cta', defaultSubHeroSection)
-    gsap.set('.hero--see-next', defaultSubHeroSection)
-
-    heroDisplay
-      .to('.hero--color-block', {
-        duration: 1,
-        width: 78,
-        delay: 0.5,
-        ease: 'power4.inOut',
-      })
-      .from('.hero--title-span', {duration: 1, ease: 'power3.out'})
-      .to('.hero--color-block', {
-        duration: 10,
-        height: 100,
-        ease: 'elastic.out',
-      })
-      .to('.hero--div', {duration: 1, y: '-25vh', ease: 'power3.out'}, '-=9')
-      .to('.hero--sub', {duration: 0.65, opacity: '100%', y: 0}, '-=10')
-      .to(
-        '.hero--pitch',
-        {duration: 1, opacity: '100%', y: '-30vh', ease: 'power3.out'},
-        '-=9',
-      )
-      .to(
-        '.hero--cta',
-        {duration: 1, opacity: '100%', y: '-29vh', ease: 'power3.out'},
-        '-=9',
-      )
-      .to('.hero--see-next', {duration: 1, opacity: '100%', y: '-3vh'}, '-=9')
+    heroDisplay.to('.hero--color-block', {
+      duration: 1,
+      width: 78,
+      delay: 0.5,
+      ease: 'power4.inOut',
+    })
 
     return function () {
       heroDisplay.kill()
