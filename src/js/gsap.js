@@ -37,15 +37,15 @@ ScrollTrigger.matchMedia({
       .to('.hero--sub', {duration: 0.65, opacity: '100%', y: 0}, '-=10')
       .to(
         '.hero--pitch',
-        {duration: 1, opacity: '100%', y: '-30vh', ease: 'power3.out'},
+        {duration: 1, opacity: '100%', y: '-40vh', ease: 'power3.out'},
         '-=9',
       )
       .to(
         '.hero--cta',
-        {duration: 1, opacity: '100%', y: '-29vh', ease: 'power3.out'},
+        {duration: 1, opacity: '100%', y: '-39vh', ease: 'power3.out'},
         '-=9',
       )
-      .to('.hero--see-next', {duration: 1, opacity: '100%', y: '-3vh'}, '-=9')
+      .to('.hero--see-next', {duration: 1, opacity: '100%', y: '-13vh'}, '-=9')
 
     /*
       Controls for the services section sequence

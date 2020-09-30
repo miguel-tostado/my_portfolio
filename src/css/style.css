@@ -202,7 +202,7 @@ Main Structure
 
 main {
   align-items: center;
-  background-image: url('../img/hero-background.jpg');
+  background-image: url('../img/hero-background.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -412,15 +412,17 @@ About Me Section
 
 .about--p {
   grid-area: text;
-  margin-right: 1em;
+  margin-right: 2em;
 }
 
 .img-me {
   border-radius: 10px;
   grid-area: img;
   object-fit: cover;
+  object-position: 10% 5%;
   place-self: center;
   width: 100%;
+  height: 100%;
 }
 
 /*
@@ -505,7 +507,16 @@ a,
 Media Queries
 */
 
-@media (min-width: 1867px) {
+@media (min-width: 2237px) {
+  main,
+  header,
+  section,
+  footer {
+    padding: 0 25%;
+  }
+  section {
+    padding-bottom: 4em;
+  }
   form {
     width: 35%;
   }
@@ -792,7 +803,19 @@ Media Queries
     font-size: var(--fs-h5);
   }
 
-  h3,
+  .logo--container {
+    display: none;
+  }
+
+  nav {
+    grid-column: 1/3;
+  }
+
+  .nav-links {
+    justify-content: space-between;
+  }
+
+  /* h3,
   .logo--home-link,
   .hero--sub {
     font-size: var(--fs-h6);
@@ -818,7 +841,7 @@ Media Queries
   input,
   textarea {
     font-size: var(--fs-smaller);
-  }
+  } */
 }
 
 @media (max-width: 460px) {
@@ -840,7 +863,7 @@ Media Queries
     font-size: var(--fs-h6);
   }
 
-  h3,
+  /* h3,
   .logo--home-link,
   .hero--sub {
     font-size: var(--fs-body);
@@ -866,5 +889,5 @@ Media Queries
   input,
   textarea {
     font-size: var(--fs-smallest);
-  }
+  } */
 }

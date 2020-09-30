@@ -22,39 +22,16 @@ window.addEventListener('scroll', (event) => {
 })
 
 /*
+Prevent form submission as Netlify does this for me
+*/
+const formSubmit = document.getElementById('contact--form')
+
+formSubmit.addEventListener('submit', (e) => e.preventDefault())
+
+/*
 Gets current year and displays it in the footer
 */
 const footerCopy = document.getElementsByClassName('footer--year')
 const currentYear = new Date().getFullYear()
 
 footerCopy[0].textContent = currentYear
-
-/*
-Send form data to email
-*/
-const nodemailer = require('nodemailer')
-const formSubmitBtn = document.getElementById('form--submit')
-console.log(formSubmitBtn)
-
-let transport = nodemailer.createTransport({
-  host: 'smtp.mailtrap.io',
-  port: 2525,
-  auth: {
-    user: 'af43b9ecbef3c0',
-    pass: 'c9e78112ce2a99',
-  },
-})
-
-const message = {
-  from: 'mtostado2@gmail.com',
-  to: 'hello@migueltostado.com',
-  subject: 'web inquiry',
-  text: 'test message',
-}
-transport.sendMail(message, (err, info) => {
-  if (err) {
-    console.log(err)
-  } else {
-    console.log(info)
-  }
-})
