@@ -1,246 +1,240 @@
-// ScrollTrigger.saveStyles(
-//   '.hero--color-block, .hero--hello, .hero--title-span, .hero--color-block, .hero--div, .hero--sub, .hero--pitch, .hero--cta, .hero--see-next',
-// )
+const body = document.getElementById("body");
 
-const body = document.getElementById('body')
-
-body.style.visibility = 'visible'
+body.style.visibility = "visible";
 
 ScrollTrigger.matchMedia({
   //  > 1062px to prevent overflow on x axis
-  '(min-width: 1063px)': function () {
+  "(min-width: 1063px)": function () {
     /*
     Controls for the hero section sequence
     */
-    const heroDisplay = gsap.timeline()
-    // const defaultSubHeroSection = {opacity: 0, y: '100px'}
+    const heroDisplay = gsap.timeline();
 
-    gsap.set('.hero--sub', {opacity: 0, y: '100px'})
-    gsap.set('.hero--see-next', {opacity: 0, y: '-100px'})
+    gsap.set(".hero--sub", { opacity: 0, y: "100px" });
+    gsap.set(".hero--see-next", { opacity: 0, y: "-100px" });
 
     heroDisplay
-      .to('.hero--color-block', {
+      .to(".hero--color-block", {
         duration: 1,
         width: 192,
         delay: 0.5,
-        ease: 'power4.inOut',
+        ease: "power4.inOut",
       })
-      .from('.hero--title-span', {duration: 1, y: '9vw', ease: 'power3.out'})
-      .to('.hero--color-block', {
+      .from(".hero--title-span", { duration: 1, y: "9vw", ease: "power3.out" })
+      .to(".hero--color-block", {
         duration: 10,
         height: 100,
-        ease: 'elastic.out',
+        ease: "elastic.out",
       })
-      .from('.hero--div', {duration: 1, y: '25vh', ease: 'power3.out'}, '-=9')
-      .to('.hero--sub', {duration: 0.65, opacity: '100%', y: 0}, '-=10')
+      .from(".hero--div", { duration: 1, y: "25vh", ease: "power3.out" }, "-=9")
+      .to(".hero--sub", { duration: 0.65, opacity: "100%", y: 0 }, "-=10")
       .from(
-        '.hero--pitch',
-        {duration: 1.5, opacity: '0', ease: 'power3.out'},
-        '-=9',
+        ".hero--pitch",
+        { duration: 1.5, opacity: "0", ease: "power3.out" },
+        "-=9"
       )
       .from(
-        '.hero--cta',
-        {duration: 1.5, opacity: '0', y: '-9vh', ease: 'power3.out'},
-        '-=9',
+        ".hero--cta",
+        { duration: 1.5, opacity: "0", y: "-9vh", ease: "power3.out" },
+        "-=9"
       )
-      .to('.hero--see-next', {duration: 0.65, opacity: '100%', y: 0}, '-=9')
+      .to(".hero--see-next", { duration: 0.65, opacity: "100%", y: 0 }, "-=9");
 
     /*
       Controls for the services section sequence
       */
 
-    gsap.set('.service--card', {y: 100})
+    gsap.set(".service--card", { y: 100 });
 
-    ScrollTrigger.batch('.service--card', {
+    ScrollTrigger.batch(".service--card", {
       onEnter: (batch) =>
         gsap.to(batch, {
           opacity: 1,
           y: 0,
-          stagger: {each: 0.5, grid: [4, 2]},
+          stagger: { each: 0.5, grid: [4, 2] },
           overwrite: true,
         }),
       onLeave: (batch) =>
-        gsap.set(batch, {opacity: 0, y: -100, overwrite: true}),
+        gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
       onEnterBack: (batch) =>
-        gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
+        gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
       onLeaveBack: (batch) =>
-        gsap.set(batch, {opacity: 0, y: 100, overwrite: true}),
-    })
+        gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+    });
 
-    ScrollTrigger.addEventListener('refreshInit', () =>
-      gsap.set('.service--card', {y: 0}),
-    )
+    ScrollTrigger.addEventListener("refreshInit", () =>
+      gsap.set(".service--card", { y: 0 })
+    );
 
     return function () {
-      heroDisplay.kill()
-      serviceDisplayDown.kill()
-    }
+      heroDisplay.kill();
+      serviceDisplayDown.kill();
+    };
   },
 
   //  < 1062px to prevent overflow on x axis
-  '(max-width: 1063px)': function () {
+  "(max-width: 1063px)": function () {
     /*
     Controls for the hero section sequence
     */
-    const heroDisplay = gsap.timeline()
-    // const defaultSubHeroSection = {opacity: 0, y: '-10vh'}
+    const heroDisplay = gsap.timeline();
 
-    gsap.set('.hero--sub', {opacity: 0, y: '100px'})
-    gsap.set('.hero--see-next', {opacity: 0, y: '-100px'})
+    gsap.set(".hero--sub", { opacity: 0, y: "100px" });
+    gsap.set(".hero--see-next", { opacity: 0, y: "-100px" });
 
     heroDisplay
-      .to('.hero--color-block', {
+      .to(".hero--color-block", {
         duration: 1,
         width: 192,
         delay: 0.5,
-        ease: 'power4.inOut',
+        ease: "power4.inOut",
       })
-      .from('.hero--title-span', {duration: 1, y: '9vw', ease: 'power3.out'})
-      .to('.hero--color-block', {
+      .from(".hero--title-span", { duration: 1, y: "9vw", ease: "power3.out" })
+      .to(".hero--color-block", {
         duration: 10,
         height: 100,
-        ease: 'elastic.out',
+        ease: "elastic.out",
       })
-      .from('.hero--div', {duration: 1, y: '25vh', ease: 'power3.out'}, '-=9')
-      .to('.hero--sub', {duration: 0.65, opacity: '100%', y: 0}, '-=10')
+      .from(".hero--div", { duration: 1, y: "25vh", ease: "power3.out" }, "-=9")
+      .to(".hero--sub", { duration: 0.65, opacity: "100%", y: 0 }, "-=10")
       .from(
-        '.hero--pitch',
-        {duration: 1.5, opacity: '0', ease: 'power3.out'},
-        '-=9',
+        ".hero--pitch",
+        { duration: 1.5, opacity: "0", ease: "power3.out" },
+        "-=9"
       )
       .from(
-        '.hero--cta',
-        {duration: 1.5, opacity: '0', y: '-9vh', ease: 'power3.out'},
-        '-=9',
+        ".hero--cta",
+        { duration: 1.5, opacity: "0", y: "-9vh", ease: "power3.out" },
+        "-=9"
       )
-      .to('.hero--see-next', {duration: 0.65, opacity: '100%', y: 0}, '-=9')
+      .to(".hero--see-next", { duration: 0.65, opacity: "100%", y: 0 }, "-=9");
 
     /*
       Controls for the services section sequence
       */
 
-    gsap.set('.service--card', {y: 100})
+    gsap.set(".service--card", { y: 100 });
 
-    ScrollTrigger.batch('.service--card', {
+    ScrollTrigger.batch(".service--card", {
       onEnter: (batch) =>
         gsap.to(batch, {
           opacity: 1,
           y: 0,
-          stagger: {each: 0.5, grid: [4, 2]},
+          stagger: { each: 0.5, grid: [4, 2] },
           overwrite: true,
         }),
       onLeave: (batch) =>
-        gsap.set(batch, {opacity: 0, y: -100, overwrite: true}),
+        gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
       onEnterBack: (batch) =>
-        gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
+        gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
       onLeaveBack: (batch) =>
-        gsap.set(batch, {opacity: 0, y: 100, overwrite: true}),
-    })
+        gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+    });
 
-    ScrollTrigger.addEventListener('refreshInit', () =>
-      gsap.set('.service--card', {y: 0}),
-    )
+    ScrollTrigger.addEventListener("refreshInit", () =>
+      gsap.set(".service--card", { y: 0 })
+    );
 
     return function () {
-      heroDisplay.kill()
-      serviceDisplayDown.kill()
-    }
+      heroDisplay.kill();
+      serviceDisplayDown.kill();
+    };
   },
 
-  '(max-width: 883px)': function () {
+  "(max-width: 883px)": function () {
     /*
     Controls for the hero section sequence
     */
-    const heroDisplay = gsap.timeline()
+    const heroDisplay = gsap.timeline();
 
-    heroDisplay.to('.hero--color-block', {
+    heroDisplay.to(".hero--color-block", {
       duration: 1,
       width: 153,
       delay: 0.5,
-      ease: 'power4.inOut',
-    })
+      ease: "power4.inOut",
+    });
 
     return function () {
-      heroDisplay.kill()
-    }
+      heroDisplay.kill();
+    };
   },
 
-  '(max-width: 708px)': function () {
+  "(max-width: 708px)": function () {
     /*
     Controls for the hero section sequence
     */
-    const heroDisplay = gsap.timeline()
+    const heroDisplay = gsap.timeline();
 
-    heroDisplay.to('.hero--color-block', {
+    heroDisplay.to(".hero--color-block", {
       duration: 1,
       width: 123,
       delay: 0.5,
-      ease: 'power4.inOut',
-    })
+      ease: "power4.inOut",
+    });
 
     return function () {
-      heroDisplay.kill()
-    }
+      heroDisplay.kill();
+    };
   },
 
-  '(max-width: 570px)': function () {
+  "(max-width: 570px)": function () {
     /*
     Controls for the hero section sequence
     */
-    const heroDisplay = gsap.timeline()
+    const heroDisplay = gsap.timeline();
 
-    heroDisplay.to('.hero--color-block', {
+    heroDisplay.to(".hero--color-block", {
       duration: 1,
       width: 98,
       delay: 0.5,
-      ease: 'power4.inOut',
-    })
+      ease: "power4.inOut",
+    });
 
     return function () {
-      heroDisplay.kill()
-    }
+      heroDisplay.kill();
+    };
   },
 
-  '(max-width: 460px)': function () {
+  "(max-width: 460px)": function () {
     /*
     Controls for the hero section sequence
     */
-    const heroDisplay = gsap.timeline()
+    const heroDisplay = gsap.timeline();
 
-    heroDisplay.to('.hero--color-block', {
+    heroDisplay.to(".hero--color-block", {
       duration: 1,
       width: 78,
       delay: 0.5,
-      ease: 'power4.inOut',
-    })
+      ease: "power4.inOut",
+    });
 
     return function () {
-      heroDisplay.kill()
-    }
+      heroDisplay.kill();
+    };
   },
-})
+});
 
 /*
 Technologies Display
 */
 
-gsap.set('.technologies--list-item', {y: 100})
+gsap.set(".technologies--list-item", { y: 100 });
 
-ScrollTrigger.batch('.technologies--list-item', {
+ScrollTrigger.batch(".technologies--list-item", {
   onEnter: (batch) =>
     gsap.to(batch, {
       opacity: 1,
       y: 0,
-      stagger: {each: 0.15, grid: [4, 1]},
+      stagger: { each: 0.15, grid: [4, 1] },
       overwrite: true,
     }),
-  onLeave: (batch) => gsap.set(batch, {opacity: 0, y: -100, overwrite: true}),
+  onLeave: (batch) => gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
   onEnterBack: (batch) =>
-    gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
+    gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
   onLeaveBack: (batch) =>
-    gsap.set(batch, {opacity: 0, y: 100, overwrite: true}),
-})
+    gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+});
 
-ScrollTrigger.addEventListener('refreshInit', () =>
-  gsap.set('.technologies--list-item', {y: 0}),
-)
+ScrollTrigger.addEventListener("refreshInit", () =>
+  gsap.set(".technologies--list-item", { y: 0 })
+);
