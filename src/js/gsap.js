@@ -49,35 +49,27 @@ ScrollTrigger.matchMedia({
       Controls for the services section sequence
       */
 
-    const serviceDisplayDown = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.service--cards',
-        start: '30% 90%',
-        end: 'center 50%',
-        scrub: 2,
-        // markers: true,
-      },
+    gsap.set('.service--card', {y: 100})
+
+    ScrollTrigger.batch('.service--card', {
+      onEnter: (batch) =>
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          stagger: {each: 0.5, grid: [4, 2]},
+          overwrite: true,
+        }),
+      onLeave: (batch) =>
+        gsap.set(batch, {opacity: 0, y: -100, overwrite: true}),
+      onEnterBack: (batch) =>
+        gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
+      onLeaveBack: (batch) =>
+        gsap.set(batch, {opacity: 0, y: 100, overwrite: true}),
     })
 
-    const defaultService_left = {opacity: 0, x: '-15%', y: '75%'}
-    const defaultService_right = {opacity: 0, x: '15%', y: '75%'}
-
-    const defaultServiceMovementIn = {
-      opacity: '100%',
-      x: '0%',
-      y: '0%',
-    }
-
-    gsap.set('.service--card-design', defaultService_left)
-    gsap.set('.service--card-development', defaultService_right)
-    gsap.set('.service--card-analytics', defaultService_left)
-    gsap.set('.service--card-audit', defaultService_right)
-
-    serviceDisplayDown
-      .to('.service--card-design', defaultServiceMovementIn)
-      .to('.service--card-development', defaultServiceMovementIn)
-      .to('.service--card-analytics', defaultServiceMovementIn)
-      .to('.service--card-audit', defaultServiceMovementIn)
+    ScrollTrigger.addEventListener('refreshInit', () =>
+      gsap.set('.service--card', {y: 0}),
+    )
 
     return function () {
       heroDisplay.kill()
@@ -127,35 +119,27 @@ ScrollTrigger.matchMedia({
       Controls for the services section sequence
       */
 
-    const serviceDisplayDown = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.service--cards',
-        start: '30% 90%',
-        end: 'center 50%',
-        scrub: 2,
-        // markers: true,
-      },
+    gsap.set('.service--card', {y: 100})
+
+    ScrollTrigger.batch('.service--card', {
+      onEnter: (batch) =>
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          stagger: {each: 0.5, grid: [4, 2]},
+          overwrite: true,
+        }),
+      onLeave: (batch) =>
+        gsap.set(batch, {opacity: 0, y: -100, overwrite: true}),
+      onEnterBack: (batch) =>
+        gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
+      onLeaveBack: (batch) =>
+        gsap.set(batch, {opacity: 0, y: 100, overwrite: true}),
     })
 
-    const defaultService_left = {opacity: 0, x: '-8%', y: '75%'}
-    const defaultService_right = {opacity: 0, x: '8%', y: '75%'}
-
-    const defaultServiceMovementIn = {
-      opacity: '100%',
-      x: '0%',
-      y: '0%',
-    }
-
-    gsap.set('.service--card-design', defaultService_left)
-    gsap.set('.service--card-development', defaultService_right)
-    gsap.set('.service--card-analytics', defaultService_left)
-    gsap.set('.service--card-audit', defaultService_right)
-
-    serviceDisplayDown
-      .to('.service--card-design', defaultServiceMovementIn)
-      .to('.service--card-development', defaultServiceMovementIn)
-      .to('.service--card-analytics', defaultServiceMovementIn)
-      .to('.service--card-audit', defaultServiceMovementIn)
+    ScrollTrigger.addEventListener('refreshInit', () =>
+      gsap.set('.service--card', {y: 0}),
+    )
 
     return function () {
       heroDisplay.kill()
@@ -178,41 +162,6 @@ ScrollTrigger.matchMedia({
 
     return function () {
       heroDisplay.kill()
-    }
-  },
-
-  '(max-width: 800px)': function () {
-    /*
-      Controls for the services section sequence
-      */
-
-    const serviceDisplayDown = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.service--cards',
-        start: '30% 90%',
-        end: 'center 50%',
-        scrub: 2,
-        // markers: true,
-      },
-    })
-
-    const defaultServiceMovementIn = {
-      opacity: '100%',
-      x: '0%',
-      y: '0%',
-    }
-
-    gsap.set('.hero--sub', {opacity: 0, y: '100px'})
-    gsap.set('.hero--see-next', {opacity: 0, y: '-100px'})
-
-    serviceDisplayDown
-      .to('.service--card-design', defaultServiceMovementIn)
-      .to('.service--card-development', defaultServiceMovementIn)
-      .to('.service--card-analytics', defaultServiceMovementIn)
-      .to('.service--card-audit', defaultServiceMovementIn)
-
-    return function () {
-      serviceDisplayDown.kill()
     }
   },
 
@@ -270,3 +219,28 @@ ScrollTrigger.matchMedia({
     }
   },
 })
+
+/*
+Technologies Display
+*/
+
+gsap.set('.technologies--list-item', {y: 100})
+
+ScrollTrigger.batch('.technologies--list-item', {
+  onEnter: (batch) =>
+    gsap.to(batch, {
+      opacity: 1,
+      y: 0,
+      stagger: {each: 0.15, grid: [4, 1]},
+      overwrite: true,
+    }),
+  onLeave: (batch) => gsap.set(batch, {opacity: 0, y: -100, overwrite: true}),
+  onEnterBack: (batch) =>
+    gsap.to(batch, {opacity: 1, y: 0, stagger: 0.15, overwrite: true}),
+  onLeaveBack: (batch) =>
+    gsap.set(batch, {opacity: 0, y: 100, overwrite: true}),
+})
+
+ScrollTrigger.addEventListener('refreshInit', () =>
+  gsap.set('.technologies--list-item', {y: 0}),
+)

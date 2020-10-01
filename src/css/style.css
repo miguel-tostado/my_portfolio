@@ -387,11 +387,39 @@ Services Section
 }
 
 /*
+Technologies Section
+*/
+
+.technologies {
+  text-align: center;
+}
+
+.technologies--tech-list {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.technologies--tech-list li h4 {
+  margin-bottom: 1em;
+}
+
+.technologies--tech-list li ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.technologies--tech-list li ul li {
+  margin-bottom: 1em;
+}
+
+/*
 Portfolio Section
 */
 
 #portfolio {
-  height: 100vh;
+  height: 50vh;
 }
 
 .service--title {
@@ -473,8 +501,13 @@ textarea:focus {
 
 .contact--socials {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
+  /* text-align: center; */
+}
+
+.fab {
+  margin: 0 1em;
 }
 
 /*
@@ -542,7 +575,7 @@ Media Queries
     padding-bottom: 4em;
   }
   form {
-    width: 50%;
+    width: 45%;
   }
   .contact--socials {
     width: 45%;
@@ -558,9 +591,6 @@ Media Queries
   }
   section {
     padding-bottom: 4em;
-  }
-  form {
-    width: 50%;
   }
 }
 
@@ -692,9 +722,6 @@ Media Queries
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
   }
-  section {
-    padding-bottom: 4em;
-  }
 
   .service--card {
     grid-column: 1;
@@ -742,10 +769,6 @@ Media Queries
 }
 
 @media (max-width: 708px) {
-  section {
-    padding-bottom: 4em;
-  }
-
   input {
     height: 40px;
   }
@@ -797,14 +820,6 @@ Media Queries
 }
 
 @media (max-width: 570px) {
-  section {
-    padding-bottom: 4em;
-  }
-
-  input {
-    height: 40px;
-  }
-
   h1,
   .hero--title {
     font-size: var(--fs-h4);
@@ -833,44 +848,9 @@ Media Queries
       'text text img'
       'text text .';
   }
-  /* h3,
-  .logo--home-link,
-  .hero--sub {
-    font-size: var(--fs-h6);
-  }
-
-  h4,
-  .btn,
-  .hero--cta,
-  .fab {
-    font-size: var(--fs-body);
-  }
-
-  h5,
-  a,
-  .hero--see-next,
-  .form--submit-btn {
-    font-size: var(--fs-small);
-  }
-
-  body,
-  .logo--sub-text,
-  .service--free-audit,
-  input,
-  textarea {
-    font-size: var(--fs-smaller);
-  } */
 }
 
 @media (max-width: 460px) {
-  section {
-    padding-bottom: 4em;
-  }
-
-  input {
-    height: 40px;
-  }
-
   h1,
   .hero--title {
     font-size: var(--fs-h5);
@@ -880,32 +860,22 @@ Media Queries
   .hero--pitch {
     font-size: var(--fs-h6);
   }
-
-  /* h3,
-  .logo--home-link,
-  .hero--sub {
-    font-size: var(--fs-body);
+  .about--content {
+    grid-template-areas:
+      '. img .'
+      'text text text';
+    grid-template-rows: 150px 2fr;
   }
-
-  h4,
-  .btn,
-  .hero--cta,
-  .fab {
-    font-size: var(--fs-small);
+  .img-me {
+    margin-bottom: 1em;
   }
+}
 
-  h5,
-  a,
-  .hero--see-next,
-  .form--submit-btn {
-    font-size: var(--fs-smaller);
+@media (max-width: 371px) {
+  main {
+    padding: 0.25em;
   }
-
-  body,
-  .logo--sub-text,
-  .service--free-audit,
-  input,
-  textarea {
-    font-size: var(--fs-smallest);
-  } */
+  #services {
+    padding: 0 0.25em 4em;
+  }
 }
