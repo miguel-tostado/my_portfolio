@@ -557,7 +557,7 @@ Media Queries
     padding-bottom: 4em;
   }
   form {
-    width: 35%;
+    width: 45%;
   }
   .contact--socials {
     width: 30%;
@@ -623,7 +623,7 @@ Media Queries
     grid-gap: 3em;
   }
   form {
-    width: 65%;
+    width: 50%;
   }
   .contact--socials {
     width: 45%;
@@ -761,7 +761,7 @@ Media Queries
       'text text .';
   }
   form {
-    width: 90%;
+    width: 75%;
   }
   .contact--socials {
     width: 75%;
