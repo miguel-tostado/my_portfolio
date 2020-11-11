@@ -2,6 +2,7 @@ const body = document.getElementById("body");
 
 body.style.visibility = "visible";
 
+
 ScrollTrigger.matchMedia({
   //  > 1062px to prevent overflow on x axis
   "(min-width: 1063px)": function () {
